@@ -92,6 +92,17 @@
   #musicBtn { right: 11rem; }
 
   #fsBtn:hover, #musicBtn:hover { background: rgba(255, 255, 255, 0.3); }
+
+  #credit {
+    position: fixed;
+    bottom: 0.6rem;
+    left: 1rem;
+    z-index: 2;
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+
+  #credit a { color: #fff; }
 </style>
 </head>
 <body>
@@ -105,9 +116,15 @@
     <div id="message">It's 7 PM! 🎉</div>
   </div>
 
-  <audio id="bgAudio" src="music.mp3" loop></audio>
+  <div id="credit">
+    Music: <a href="https://archive.org/details/BrylieChristopherOxleyMorningBirdsong" target="_blank" rel="noopener">"Morning Birdsong"</a>
+    by Brylie Christopher Oxley,
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+  </div>
 
-  <button id="musicBtn">🔇 Play Music</button>
+  <audio id="bgAudio" src="https://archive.org/download/BrylieChristopherOxleyMorningBirdsong/BrylieChristopherOxley-morning_birdsong.mp3" loop crossorigin="anonymous"></audio>
+
+  <button id="musicBtn">🔇 Play Sound</button>
   <button id="fsBtn">⛶ Fullscreen</button>
 
   <script>
@@ -173,7 +190,7 @@
     audio.volume = 0.5;
 
     function updateMusicBtn() {
-      musicBtn.textContent = audio.paused ? "🔇 Play Music" : "🔊 Pause Music";
+      musicBtn.textContent = audio.paused ? "🔇 Play Sound" : "🔊 Pause Sound";
     }
 
     function toggleMusic() {
